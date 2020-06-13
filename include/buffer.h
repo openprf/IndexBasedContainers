@@ -1,10 +1,13 @@
+/*
+Index Based Buffer of constant size chunks. Pointers aren't used inside.
+
+MIT License
+
+Copyright (c) 2020 Alexey Afanasyev
+ */
 
 #ifndef CONTAINERS_BUFFER_H
 #define CONTAINERS_BUFFER_H
-
-/*
- * Index Based Buffer of constant size chunks. Pointers aren't used inside.
- */
 
 /**
  * @param number_of_elements

@@ -1,6 +1,10 @@
-//
-// Created by alexey on 11.06.2020.
-//
+/*
+Index Based Buffer of constant size chunks. Pointers aren't used inside.
+
+MIT License
+
+Copyright (c) 2020 Alexey Afanasyev
+ */
 
 #include <glob.h>
 #include <stdlib.h>

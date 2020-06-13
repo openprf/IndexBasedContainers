@@ -10,7 +10,7 @@
 /*
  * Basic Using of Buffer
  */
-void test1() {
+void example1() {
     printf("\nBasic usege:\n");
     void *buf = ibb_create_buffer(4, sizeof(int));
 
@@ -19,7 +19,7 @@ void test1() {
     }
 
 
-    printf("allocated %u  bytes (size %d)\n", ibb_buffer_size(buf), ibb_size(buf));
+    printf("allocated %lu  bytes (size %lu)\n", ibb_buffer_size(buf), ibb_size(buf));
 
     int *a = ibb_alloc(buf);
     int *b = ibb_alloc(buf);
@@ -41,7 +41,7 @@ void test1() {
         }
     }
 
-    printf("elements: %u\n", ibb_size(buf));
+    printf("elements: %lu\n", ibb_size(buf));
 
     free(buf);
 
@@ -50,7 +50,7 @@ void test1() {
 /*
  * Using list of allocated elements
  */
-void test2() {
+void example2() {
     printf("\nUsing list of allocated elements:\n");
     void *buf = ibb_create_buffer(15, sizeof(int));
 
@@ -83,7 +83,7 @@ struct user_data_t {
 /*
  * Storing Buffer in file
  */
-void test3() {
+void example3() {
     printf("\nStoring Buffer in file:\n");
     FILE *f = fopen("phone_book.bin", "w");
     if (!f) {
@@ -144,7 +144,7 @@ void test3() {
             }
         }
     } else {
-        printf("read fail! %u", rd);
+        printf("read fail! %lu", rd);
     }
 
     free(ph_book);
@@ -153,7 +153,7 @@ void test3() {
 /*
  * Mapping Buffer file in memory
  */
-void test4() {
+void example4() {
     printf("\nMapping Buffer file:\n");
     int fd = open("phone_book.bin", O_RDWR, 0);
 
@@ -185,10 +185,10 @@ void test4() {
 int main() {
     printf("Buffer tests:\n");
 
-    test1();
-    test2();
-    test3();
-    test4();
+    example1();
+    example2();
+    example3();
+    example4();
 
     return 0;
 }
