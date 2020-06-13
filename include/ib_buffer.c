@@ -35,16 +35,16 @@ struct buffer_t{
 };
 
 ///Internal
-char* get_storage(struct buffer_t* buffer){
+static inline char* get_storage(struct buffer_t* buffer){
     return (char*)(buffer->elements) + buffer->header.capasity * sizeof(struct element_header_t);
 }
 
-void* get_data_ptr_by_index(struct buffer_t* buffer, size_t index){
+static inline void* get_data_ptr_by_index(struct buffer_t* buffer, size_t index){
     char * storage = get_storage(buffer);
     return storage + index * buffer->header.element_size;
 }
 
-size_t get_index_by_data_ptr(struct buffer_t* buffer, char* data_ptr){
+static inline size_t get_index_by_data_ptr(struct buffer_t* buffer, char* data_ptr){
     char * storage = get_storage(buffer);
     return (data_ptr - storage) / buffer->header.element_size;
 }
