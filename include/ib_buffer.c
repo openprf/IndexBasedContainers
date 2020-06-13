@@ -10,7 +10,7 @@ Copyright (c) 2020 Alexey Afanasyev
 #include <stdlib.h>
 #include <limits.h>
 
-#include "buffer.h"
+#include "ib_buffer.h"
 
 #define NO_ELEMENT UINT_MAX
 

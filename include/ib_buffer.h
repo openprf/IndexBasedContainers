@@ -6,8 +6,8 @@ MIT License
 Copyright (c) 2020 Alexey Afanasyev
  */
 
-#ifndef CONTAINERS_BUFFER_H
-#define CONTAINERS_BUFFER_H
+#ifndef CONTAINERS_IB_BUFFER_H
+#define CONTAINERS_IB_BUFFER_H
 
 /**
  * @param number_of_elements
@@ -68,4 +68,4 @@ size_t ibb_get_allocated_ptrs(void* memory_buffer, void** allocatad_chuncs);
  */
 size_t ibb_size(void* memory_buffer);
 
-#endif //CONTAINERS_BUFFER_H
+#endif //CONTAINERS_IB_BUFFER_H

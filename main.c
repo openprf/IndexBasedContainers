@@ -5,7 +5,7 @@
 #include <zconf.h>
 #include <sys/mman.h>
 
-#include "buffer.h"
+#include "ib_buffer.h"
 
 /*
  * Basic Using of Buffer
