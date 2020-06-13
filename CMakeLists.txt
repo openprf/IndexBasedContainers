@@ -3,8 +3,17 @@ project(Containers C)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories(include)
+set(SOURCES_DIR include)
+set(SOURCES
+        ${SOURCES_DIR}/ib_buffer.h
+        ${SOURCES_DIR}/ib_buffer.c
+        ${SOURCES_DIR}/ib_map.h
+        ${SOURCES_DIR}/ib_map.c)
 
-add_executable(Containers main.c include/ib_buffer.h include/ib_buffer.c)
+include_directories(${SOURCES_DIR})
 
-add_library(ibconainers SHARED include/ib_buffer.h include/ib_buffer.c)
+add_library(ibconainers SHARED ${SOURCES})
+
+add_executable(Tests tests/test.c ${SOURCES} )
+
+add_executable(Examples examples/main.c ${SOURCES})
