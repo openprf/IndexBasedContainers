@@ -44,6 +44,26 @@ struct ibmap_t{
     struct entry_header_t entries[];
 };
 
+//Service functions
+
+static inline size_t get_entry_size(struct ibmap_t* map){
+    return map->header.key_size + map->header.value_size;
+}
+
+static inline char* get_storage(struct ibmap_t* map){
+    return (char*)map->entries + map->header.capacity * sizeof(struct entry_header_t);
+}
+
+static inline void* get_key_by_index(struct ibmap_t* map, size_t key_index){
+    return (void*) (get_storage(map) + key_index * get_entry_size(map));
+}
+
+static inline void* get_value_by_index(struct ibmap_t* map, size_t value_index){
+    return (void*) (get_storage(map) + value_index * get_entry_size(map) + map->header.key_size);
+}
+
+///INTERFACE FUNCTIONS
+
 size_t ibmap_get_memory_size(size_t key_size, size_t value_size, size_t number_of_entries) {
     return sizeof(struct ibmap_header_t) +
             number_of_entries * (sizeof(struct entry_header_t) + key_size + value_size);
@@ -94,7 +114,9 @@ size_t ibmap_size(void* memory_buffer){
     return map_hdr->size;
 }
 
-void* ibmap_alloc(void* memory_buffer, void* key_ptr){}
+void* ibmap_alloc(void* memory_buffer, void* key_ptr){
+
+}
 
 size_t ibmap_erase(void* memory_buffer, void* key_ptr);
 size_t ibmap_erase_value(void* memory_buffer, void* value_ptr){}

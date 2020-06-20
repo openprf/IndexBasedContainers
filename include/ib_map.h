@@ -40,6 +40,7 @@ size_t ibmap_size(void* memory_buffer);
 void* ibmap_alloc(void* memory_buffer, void* key_ptr);
 
 size_t ibmap_erase(void* memory_buffer, void* key_ptr);
+
 size_t ibmap_erase_value(void* memory_buffer, void* value_ptr);
 
 void* ibmap_find(void* memory_buffer, void* key_ptr);
