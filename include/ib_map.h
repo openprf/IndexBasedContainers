@@ -33,7 +33,7 @@ size_t ibmap_memory_size(void* memory_buffer);
 int ibmap_init(size_t key_size, size_t value_size, size_t number_of_entries, void* memory_buffer);
 
 
-int ibmap_create(size_t key_size, size_t value_size, size_t number_of_entries);
+void* ibmap_create(size_t key_size, size_t value_size, size_t number_of_entries);
 
 size_t ibmap_size(void* memory_buffer);
 
